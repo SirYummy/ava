@@ -1,12 +1,16 @@
 #################################################################################################################################
 
-Ava - Advanced Virtual Assistant
+# Ava - Advanced Virtual Assistant
 
 #################################################################################################################################
 
+To run the current demo, just download ```demo.js``` and, in a NodeJS-aware terminal, run ```node demo.js```.
+
+Here's the aforementioned demo on YouTube: https://www.youtube.com/embed/PGHDlU4nJNM
+
 +============+
 
-Music Demo
+## Music Demo
 
 +============+
 
@@ -36,7 +40,7 @@ Human: 🎶 Ohhhhhhhh, ohhhhhhhhhhh, ohhhhhhhh, ohhhhhhhh, ohhhhhhhhhh, ohhhhhhh
 
 +============+
 
-Nav Demo
+## Nav Demo
 
 +============+
 
