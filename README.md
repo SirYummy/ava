@@ -6,7 +6,7 @@
 
 To run the current demo, just download ```demo.js``` and, in a NodeJS-aware terminal, run ```node demo.js```.
 
-Here's the aforementioned demo on YouTube: https://www.youtube.com/embed/PGHDlU4nJNM
+Here's the aforementioned demo on YouTube: https://www.youtube.com/watch?v=PGHDlU4nJNM
 
 +============+
 
