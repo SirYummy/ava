@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SirYummy/ava.git"
+    "url": "https://github.com/SirYummy/ava.git"
   },
   "keywords": [
     "ava",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/SirYummy/ava/issues"
   },
-  "homepage": "https://github.com/SirYummy/ava#readme"
+  "homepage": "https://github.com/SirYummy/ava#readme",
+  "dependencies": {
+    "natural": "^0.5.6"
+  }
 }
