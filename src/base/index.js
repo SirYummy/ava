@@ -7,10 +7,13 @@
  *
  */
 const readline = require('readline')
+const React = require('react')
 
-module.exports = class Ava {
+module.exports = class Ava extends React.Component {
 
-	constructor() {
+	constructor(props) {
+		super(props)
+		this.greet = this.greet.bind(this)
 		this.greet()
 	}
 
@@ -48,9 +51,17 @@ Thank you!` + '\x1b[0m'
 		})
 
 		rl.on('line', (input) => {
-			this.typeOut(this.confused)
+			this.provideResponse(input)
 		})
 			
+	}
+
+	provideResponse(userInput) {
+		this.typeOut(this.confused)
+	}
+
+	render() {
+		return (null)
 	}
 
 }
