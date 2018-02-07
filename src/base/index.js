@@ -1,51 +1,78 @@
 /*
- * Ava
- * @creator: SirYummy
+ * Ava - Advanced Virtual Assistant
+ * @creator: Micah Delane Bolen aka SirYummy
  * @repo: https://github.com/SirYummy/ava
  *
  * Base Class
  *
  */
-const readline = require('readline')
-const React = require('react')
+import ReadLine from 'readline'
 
-module.exports = class Ava extends React.Component {
+import DefaultProps from './index.defaultProps'
+import Time from './index.defaultProps.time'
 
-	constructor(props) {
-		super(props)
+class Ava {
+
+	constructor() {
 		this.greet = this.greet.bind(this)
 		this.greet()
 	}
 
-	get confused() {
-		return '\x1b[36m' + `I'm sorry, but I don't understand your request yet.
-Please be patient while my creator teaches me more about the world.
-Thank you!` + '\x1b[0m' 
+	get confusedResponse() {
+		return this.colorize(
+		`I'm sorry, but I don't understand your request yet.
+		Please be patient while my creator teaches me more about the world.
+		Thank you!`,
+		Ava.prototype.defaultProps.COLORS.AZURE.STRING
+		)
+	}
+
+	get creatorInfo() {
+		return this.colorize(
+			`My creator is ${Ava.prototype.defaultProps.CREATOR}.`, 
+			Ava.prototype.defaultProps.COLORS.AZURE.STRING
+		)
+	}
+
+	colorize(text, color) {
+		switch(color) {
+			case Ava.prototype.defaultProps.COLORS.AZURE.STRING:
+				return 
+					`${Ava.prototype.defaultProps.COLORS.AZURE.PREFIX}` +
+					`${text}` +
+					`${Ava.prototype.defaultProps.COLORS.AZURE.SUFFIX}`
+				break;
+			default:
+				return `${text}`
+		}
 	}
 
 	greet() {
-		const greeting = '\x1b[36m' + 'Hello, my name is Ava.  How can I help you?' + '\x1b[0m'
+		const greeting = this.colorize(
+		`Hello, my name is Ava.  How can I help you?`, 
+		Ava.prototype.defaultProps.COLORS.AZURE.STRING
+		)
 		this.typeOut(greeting)
 	}
 
-	typeOut(phrase) {
+	typeOut(phrase, phraseIntervalDelay = Ava.prototype.defaultProps.TIME.MEDIUM) {
 		let phraseIndex = 0
-		const typeInterval = 
+		const typeInterval =
 			setInterval(() => {
 				let typeMe = phrase[phraseIndex]
 				phraseIndex++
-				if(phraseIndex > phrase.length) {
+				if (phraseIndex > phrase.length) {
 					clearInterval(typeInterval)
 					process.stdout.write('\n')
 					this.acceptUserInput()
 				} else {
 					process.stdout.write(`${typeMe}`)
 				}
-			}, 50)
+			}, phraseIntervalDelay)
 	}
 
 	acceptUserInput() {
-		const rl = readline.createInterface({
+		const rl = ReadLine.createInterface({
 			input: process.stdin,
 			output: process.stdout
 		})
@@ -53,15 +80,23 @@ Thank you!` + '\x1b[0m'
 		rl.on('line', (input) => {
 			this.provideResponse(input)
 		})
-			
+
 	}
 
 	provideResponse(userInput) {
-		this.typeOut(this.confused)
-	}
+		let response
 
-	render() {
-		return (null)
+		if (userInput.indexOf(Ava.prototype.defaultProps.CREATOR) >= 0) {
+			response = this.creatorInfo
+		} else {
+			response = this.confusedResponse
+		}
+		this.typeOut(response)
 	}
 
 }
+
+Ava.prototype.defaultProps = DefaultProps
+Ava.prototype.defaultProps.TIME = Time
+
+export default Ava
