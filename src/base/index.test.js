@@ -1,32 +1,43 @@
-import React from 'react'
-import { configure, mount, render, shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 import Ava from './index'
 
 describe('Ava', () => {
 
-    beforeAll(() => {
-        configure({ adapter: new Adapter() })
-    })
+    describe('when an instance is created', () => {
 
-    describe('when created', () => {
-
-        let avaWrapper
         let avaInstance
         let avaGreetSpy
 
-        beforeEach(() => {
+        beforeAll(() => {
             avaGreetSpy = spyOn(Ava.prototype, 'greet')
-            avaWrapper = mount(<Ava />)
-            avaInstance = avaWrapper.instance()
+            avaInstance = new Ava()
         })
 
         it('is an instance of Ava', () => {
             expect(avaInstance).toBeInstanceOf(Ava)
         })
 
+        it('has a greet property bound to the instance', () => {
+            expect(avaInstance.hasOwnProperty('greet')).toEqual(true)
+        })
+
         it('greets the user', () => {
             expect(avaGreetSpy).toHaveBeenCalled()
         })
+    })
+
+    describe('when it greets the user', () => {
+
+        let avaInstance
+        let avaColorizeSpy
+
+        beforeAll(() => {
+            avaColorizeSpy = spyOn(Ava.prototype, 'colorize')
+            avaInstance = new Ava()
+        })
+        
+        it('should colorize the greeting', () => {
+            expect(avaColorizeSpy).toHaveBeenCalled()
+        })
+
     })
 })
