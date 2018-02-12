@@ -1,51 +1,18 @@
-#################################################################################################################################
+# [Ava&trade;](Ava.md)
+[A](Ava.md)dvanced [V](Ava.md)irtual [A](Ava.md)ssistant
 
-# Ava - Advanced Virtual Assistant
+## [Releases](releases/README.md)
 
-#################################################################################################################################
+### [Version 0.0.2 (Current)](releases/0.0.2/README.md)
+- [Introduce yourself](releases/0.0.2/README.md#Introduce)!
+- Also, here's [an introduction](Ava.md) to Ava in her own words.
 
-To run the current demo, just download ```demo.js``` and, in a NodeJS-aware terminal, run ```node demo.js```.
+### [Version 0.0.1](releases/0.0.1/README.md)
+- You can now [give Ava commands](releases/0.0.1/README.md#Commands)!
+- If you need inspiration, watch [this video](https://www.youtube.com/watch?v=PGHDlU4nJNM) for more ideas!
 
-Here's the aforementioned demo on YouTube: https://www.youtube.com/watch?v=PGHDlU4nJNM
+### [Version 0.0.0](releases/0.0.0/README.md)
+- Ava learns her first [musical skill](skills/music/dj-loop-skill/README.md).
+- She also learns her first [navigational skill](skills/navigation/basic/README.md).
 
-+============+
-
-## Music Demo
-
-+============+
-
-Human: Ava, play this back for me. 
-
-Ava: Ok, ready when you are.
-
-Human: [ clap, clap, clap ] 🎶 Mmm, hmm! 🎶
-
-Ava: [ clap, clap, clap ] 🎶 Mmm, hmm! 🎶
-
-Human: Sweet, now loop it!
-
-Ava: [ clap, clap, clap ] 🎶 Mmm, hmm! 🎶 [ clap, clap, clap ] 🎶 Mmm, hmm! 🎶 [ clap, clap, clap ] 🎶 Mmm, hmm! 🎶 
-
-[ Ava continues to loop ]
-
-Human: Now, get this down for me.
-
-[ Ava gives an A-OK sign ]
-
-Human: 🎶 Ohhhhhhhh, ohhhhhhhhhhh, ohhhhhhhh, ohhhhhhhh, ohhhhhhhhhh, ohhhhhhhhhhhh 🎶
-
-[ Ava puts it all together. ]
-
-🎶
-
-+============+
-
-## Nav Demo
-
-+============+
-
-Human: Ava, which way is Dairy Queen?
-
-Ava: This way.
-
-[ A directional arrow appears on the screen. ]
+&copy;2018 C0h3n, Inc.&nbsp;All rights reserved.

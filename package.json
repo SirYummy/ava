@@ -4,8 +4,11 @@
   "description": "Ava - Advanced Virtual Assistant",
   "main": "index.js",
   "scripts": {
+    "babel:watchOut": "./node_modules/.bin/babel -w source_code/ -d babel_watch_out",
+    "babel:buildVr" : "./node_modules/.bin/babel source_code/environments/virtual_reality -d build/environments/virtual_reality",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:watchNoWeb": "jest --watch --testPathIgnorePatterns=/web/",
     "test:watchAll": "jest --watchAll"
   },
   "repository": {
@@ -23,10 +26,12 @@
     "url": "https://github.com/SirYummy/ava/issues"
   },
   "homepage": "https://github.com/SirYummy/ava#readme",
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
-    "jest" : "20.0.4"
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "20.0.4"
   }
 }
